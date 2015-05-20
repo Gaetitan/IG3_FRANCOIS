@@ -13,10 +13,6 @@
 			include_once('pages/accueil.inc.php');
 			break;
 			
-		case 1:
-			include_once('pages/listerParticipants.inc.php');
-			break;
-			
 			
 			
 		default:

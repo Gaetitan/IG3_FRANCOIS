@@ -6,15 +6,31 @@
 	});
 	
 	app.controller('TabController', function(){
-		this.tab=1;
-		this.setTab=function(setTab){
-			this.tab=setTab;
+		this.tab = 0;
+
+		this.setTab = function(newValue){
+			this.tab = newValue;
 		};
-		this.isSet=function(checkTab){
-			return this.tab===checkTab;
+
+		this.isSet = function(tabName){
+			return this.tab === tabName;
 		};
 	});
 	
+	app.controller('FormController', function(){
+		this.form = 0;
+
+		this.setForm = function(newValue){
+			this.form = newValue;
+		};
+
+		this.isSet = function(formName){
+			return this.form === formName;
+		};
+		
+
+		
+	});
 	
 	
 	var soirees=[

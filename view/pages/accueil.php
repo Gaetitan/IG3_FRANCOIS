@@ -28,15 +28,9 @@
                     <div class="caption">
                         <h3>{{evenement.nom}}</h3>
                         <p>{{evenement.ville}} - {{evenement.date | date:'dd/MM/yyyy, hh:mm'}}</p>
-                        <p ng-controller="TabController as tab">
-							<ul class="nodecoration">
-								<li ng-class="{active:tab.isSet(1)}">
-									<a href="#" class="btn btn-primary" ng-click="{tab.setTab(1)}">S'inscrire</a>
-								</li>
-								<li ng-class="{active:tab.isSet(2)}">
-									<a href="#" class="btn btn-default" ng-click="{tab.setTab(2)}">Infos</a>
-								</li>
-							</ul>
+                        <p>
+							<a href="#" class="btn btn-primary">S'inscrire</a>
+							<a href="#" class="btn btn-default">Infos</a>
                         </p>
                     </div>
                 </div>
