@@ -1,0 +1,7 @@
+ul.nodecoration{
+	padding-left: 0px;
+}
+
+ul.nodecoration > li{
+	display: inline;
+}
