@@ -10,7 +10,7 @@
 			$DBPASSWD='zkP4DLFTP6D2';
 			
 			try{
-				$this->dbo=parent::__construct('mysql:host='.$DBHOST.'; dbname='.$DBNAME, $DBUSER, $DBPASSWD);
+				$this->dbo=parent::__construct('mysql:host='.$DBHOST.';dbname='.$DBNAME,$DBUSER,$DBPASSWD);
 				$req = "SET NAMES UTF8;";
 				$resu = PDO::query($req);
 			}
