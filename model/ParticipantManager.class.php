@@ -30,16 +30,16 @@ class ParticipantManager{
 		$req->closeCursor();
 	}
 	
-	public function delete($participant){
+	public function delete($numero){
 			$sql="DELETE FROM participant WHERE partid=:numero";
-			$req=$this->ds->prepare($sql);
+			$req=$this->db->prepare($sql);
 			$req->bindValue(':numero', $numero, PDO::PARAM_STR);
 			$req->execute();
 			$req->closeCursor();
 	}
 	
 	public function getOneById($numero){
-		$sql="SELECT partnum as numero, partnom as nom, partprenom as prenom, partemail as email, partmdp as mdp FROM participant WHERE partid=:numero";
+		$sql="SELECT partid as numero, partnom as nom, partprenom as prenom, partemail as email, partmdp as mdp FROM participant WHERE partid=:numero";
 		$req=$this->db->prepare($sql);
 		$req->bindValue(':numero', $numero, PDO::PARAM_STR);
 		$req->execute();
@@ -53,7 +53,7 @@ class ParticipantManager{
 	}
 	
 	public function getOneByEmail($email){
-		$sql="SELECT partnum as numero, partnom as nom, partprenom as prenom, partemail as email, partmdp as mdp FROM participant WHERE partemail=:email";
+		$sql="SELECT partid as numero, partnom as nom, partprenom as prenom, partemail as email, partmdp as mdp FROM participant WHERE partemail=:email";
 		$req=$this->db->prepare($sql);
 		$req->bindValue(':email', $email, PDO::PARAM_STR);
 		$req->execute();

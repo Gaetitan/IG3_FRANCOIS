@@ -21,22 +21,24 @@
 
         <!-- Page Features -->
         <div class="row text-center">
-
-            <div class="col-md-3 col-sm-6 hero-feature" ng-repeat="evenement in barathon.evenements">
-                <div class="thumbnail">
-                    <img ng-src="{{evenement.image}}" alt="">
-                    <div class="caption">
-                        <h3>{{evenement.nom}}</h3>
-                        <p>{{evenement.ville}} - {{evenement.date | date:'dd/MM/yyyy, hh:mm'}}</p>
-                        <p>
-							<a href="#" class="btn btn-primary">S'inscrire</a>
-							<a href="#" class="btn btn-default">Infos</a>
-                        </p>
-                    </div>
-                </div>
-            </div>
+			<?php foreach($barathons as $barathon){ ?>
+				<div class="col-md-3 col-sm-6 hero-feature">
+					<div class="thumbnail">
+						<div class="caption">
+							<h3><?php print($barathon->getNom()); ?></h3>
+							<p><?php print($barathon->getVille()); ?></p>
+							<p><?php print(getFrenchDate($barathon->getDate())); ?></p>
+							<p>
+								<a href="#" class="btn btn-primary">S'inscrire</a>
+								<form action="index.php?page=descriptionBarathon" method="post">
+									<input type="hidden" name="num_barathon" value="<?php print($barathon->getNumero()); ?>"/>
+									<input class="btn btn-default" type="submit" value="Infos"/>
+								</form>
+							</p>
+						</div>
+					</div>
+				</div>
+			<?php } ?>
 			
         </div>
         <!-- /.row -->
-
-        <hr>
