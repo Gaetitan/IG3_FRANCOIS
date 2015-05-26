@@ -4,10 +4,13 @@
 		protected $dbo;
 		
 		public function __construct(){
-			
+			$DBHOST='127.13.150.2:3306';
+			$DBNAME='ruedelasoif';
+			$DBUSER='adminpj7zaGH';
+			$DBPASSWD='zkP4DLFTP6D2';
 			
 			try{
-				$this->dbo=parent::__construct('mysql:host=127.13.150.2:3306;dbname=ruedelasoif;','adminpj7zaGH','zkP4DLFTP6D2');
+				$this->dbo=parent::__construct('mysql:host='.$DBHOST.'; dbname='.$DBNAME, $DBUSER, $DBPASSWD);
 				$req = "SET NAMES UTF8;";
 				$resu = PDO::query($req);
 			}
