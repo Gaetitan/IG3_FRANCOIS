@@ -10,7 +10,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.php?page=accueil">EST CE QUE CA MARCHE</a>
+                <a class="navbar-brand" href="index.php?page=accueil">RUE DE LA SOIF</a>
             </div>
 			
             <!-- Collect the nav links, forms, and other content for toggling -->
