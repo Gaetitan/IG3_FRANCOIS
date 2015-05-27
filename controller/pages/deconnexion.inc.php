@@ -5,6 +5,6 @@
 	if(!empty($_COOKIE['idOrga'])){
 		setcookie("idOrga");
 	}
-	header('Location: http://localhost/ruedelasoif/index.php');
+	header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
 	include_once("view/pages/deconnexion.php");
 ?>

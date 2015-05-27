@@ -1,4 +1,5 @@
-<div class="mesBarathons" >
+<?php echo "EN MAINTENANCE" ?>
+<!--<div class="mesBarathons" >
                 <table >
                     <tr>
                         <td>
@@ -57,4 +58,4 @@
                     </tr>
                 </table>
             </div>
-            
+ -->           

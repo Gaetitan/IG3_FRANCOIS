@@ -14,8 +14,3 @@
 		
 		<input class="btn btn-primary" type="submit" value="Valider"/>
 	</form>
-	
-	<script language="javascript">
-		function choix(form){
-			i=
-	</script>

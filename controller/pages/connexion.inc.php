@@ -11,7 +11,7 @@
 			if(md5("B0b".$_POST['mdp_part']."p0!yEtc#")===$manager_part->getOneByEmail($_POST['email_part'])->getMdp()){
 				$cookie=$manager_part->getOneByEmail($_POST['email_part'])->getNumero();
 				setcookie("idPart", $cookie, time()+365*24*3600);
-				header('Location: http://localhost/ruedelasoif/index.php');
+				header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
 			}
 			else{
 				echo "Mot de passe incorrect. Veuillez saisir à nouveau vos informations.";
@@ -26,7 +26,7 @@
 			if(md5("B0b".$_POST['mdp_orga']."p0!yEtc#")===$manager_orga->getOneByEmail($_POST['email_orga'])->getMdp()){
 				$cookie=$manager_orga->getOneByEmail($_POST['email_orga'])->getNumero();
 				setcookie("idOrga", $cookie, time()+365*24*3600);
-				header('Location: http://localhost/ruedelasoif/index.php');
+				header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
 			}
 			else{
 				echo "Mot de passe incorrect. Veuillez saisir à nouveau vos informations.";
