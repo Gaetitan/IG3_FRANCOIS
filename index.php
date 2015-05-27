@@ -6,7 +6,3 @@
 	require_once("controller/pages.inc.php");
 	require_once("controller/footer.inc.php");
 ?>
-	
-
-
-

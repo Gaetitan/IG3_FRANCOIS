@@ -64,11 +64,25 @@ class BarathonManager{
 		$req->bindValue(':ville', $ville, PDO::PARAM_STR);
 		$req->execute();
 		
-		$bar=new Bar($req->fetch(PDO::FETCH_OBJ));
+		$barathon=new Barathon($req->fetch(PDO::FETCH_OBJ));
 		if($bar->getNumero()===null) {
-			$participant=null;
+			$barathon=null;
 		}
-		return $participant;
+		return $barathon;
+		$req->closeCursor();
+	}
+	
+	public function getOneByNom($nom){
+		$sql="SELECT barathonid as numero, barathonnom as nom, barathonville as ville, barathonnbplaces_base as nbPlaces_base, barathonnbplaces as nbPlaces, barathonprix as prix, barathondate as date, orgaid as orgaId FROM barathon WHERE barathonnom=:nom";
+		$req=$this->db->prepare($sql);
+		$req->bindValue(':nom', $nom, PDO::PARAM_STR);
+		$req->execute();
+		
+		$barathon=new Barathon($req->fetch(PDO::FETCH_OBJ));
+		if($barathon->getNumero()===null) {
+			$barathon=null;
+		}
+		return $barathon;
 		$req->closeCursor();
 	}
 	
@@ -84,6 +98,24 @@ class BarathonManager{
 			$listeBarathon[]=new Barathon($barathon);
 		}
 		
+		return $listeBarathon;
+		
+		$req->closeCursor();
+	}
+	
+	public function getListByOrgaId($orgaId){
+		$listeBarathon=array();
+		
+		$sql="SELECT barathonid as numero, barathonnom as nom, barathonville as ville, barathonnbplaces_base as nbPlaces_base, barathonnbplaces as nbPlaces, barathonprix as prix, barathondate as date, orgaid as orgaId FROM barathon
+		WHERE orgaid=:orgaId
+		ORDER BY nom ASC";
+		$req=$this->db->prepare($sql);
+		$req->bindValue(':orgaId', $orgaId, PDO::PARAM_STR);
+		$req->execute();
+		
+		while($barathon=$req->fetch(PDO::FETCH_OBJ)){
+			$listeBarathon[]=new Barathon($barathon);
+		}
 		return $listeBarathon;
 		
 		$req->closeCursor();

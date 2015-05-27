@@ -16,12 +16,48 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="index.php?page=creerCompte">Créer un compte</a>
-                    </li>
-                    <li>
-                        <a href="index.php?page=connexion">Se connecter</a>
-                    </li>
+					<?php
+						if(empty($_COOKIE['idPart']) && empty($_COOKIE['idOrga'])){
+					?>
+						<li>
+							<a href="index.php?page=creerCompte">Créer un compte</a>
+						</li>
+						<li>
+							<a href="index.php?page=connexion">Se connecter</a>
+						</li>
+					<?php
+					}
+					if(!empty($_COOKIE['idPart']) && empty($_COOKIE['idOrga'])){ ?>
+						<li>
+							<a href="index.php?page=mesBarathons">Mes barathons</a>
+						</li>
+						<li>
+							<a href="">Supprimer une inscription</a>
+						</li>
+						<li>
+							<a href="index.php?page=deconnexion">Déconnexion</a>
+						</li>
+					<?php
+					}
+					if(empty($_COOKIE['idPart']) && !empty($_COOKIE['idOrga'])){ ?>
+						<li>
+							<a href="index.php?page=creerBarathon">Créer un barathon</a>
+						</li>
+						<li>
+							<a href="index.php?page=selectionnerBars">Sélectionner des bars</a>
+						</li>
+						<li>
+							<a href="index.php?page=ajouterBar">Ajouter un bar</a>
+						</li>
+						<li>
+							<a href="index.php?page=mesBarathons">Mes barathons</a>
+						</li>
+						<li>
+							<a href="index.php?page=deconnexion">Déconnexion</a>
+						</li>
+					<?php
+					}
+					?>
                 </ul>
             </div>
             <!-- /.navbar-collapse -->		

@@ -5,8 +5,6 @@
         <header class="jumbotron hero-spacer">
             <h1>Salut à toi barathonien</h1>
             <p>Combien de temps cela fait-il que tu n'as pas pratiqué notre beau sport ? Inscris toi vite au barathon le plus proche de chez toi !</p>
-            <p><a class="btn btn-primary btn-large">Call to action!</a>
-            </p>
         </header>
 
         <hr>
@@ -29,7 +27,12 @@
 							<p><?php print($barathon->getVille()); ?></p>
 							<p><?php print(getFrenchDate($barathon->getDate())); ?></p>
 							<p>
-								<a href="#" class="btn btn-primary">S'inscrire</a>
+								<?php if(empty($_COOKIE['idOrga'])){ ?>
+									<form action="index.php?page=inscriptionBarathon" method="post">
+										<input type="hidden" name="num_barathon" value="<?php print($barathon->getNumero()); ?>"/>
+										<input class="btn btn-primary" type="submit" value="S'inscrire"/>
+									</form>
+								<?php } ?>
 								<form action="index.php?page=descriptionBarathon" method="post">
 									<input type="hidden" name="num_barathon" value="<?php print($barathon->getNumero()); ?>"/>
 									<input class="btn btn-default" type="submit" value="Infos"/>
