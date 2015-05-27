@@ -32,9 +32,6 @@
 							<a href="index.php?page=mesBarathons">Mes barathons</a>
 						</li>
 						<li>
-							<a href="">Supprimer une inscription</a>
-						</li>
-						<li>
 							<a href="index.php?page=deconnexion">Déconnexion</a>
 						</li>
 					<?php
@@ -48,6 +45,9 @@
 						</li>
 						<li>
 							<a href="index.php?page=ajouterBar">Ajouter un bar</a>
+						</li>
+						<li>
+							<a href="">Supprimer un barathon</a>
 						</li>
 						<li>
 							<a href="index.php?page=mesBarathons">Mes barathons</a>
