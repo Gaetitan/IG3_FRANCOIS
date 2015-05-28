@@ -21,7 +21,7 @@
 	if($existe){
 		echo "Ce compte existe déja !";
 	}
-	else{
+	if($cree){
 		echo "Votre compte a bien été créé !";
 	}
 ?>
