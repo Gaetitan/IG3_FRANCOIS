@@ -11,13 +11,13 @@ class ParticipantManager{
 	public function add($participant){
 		$sql="INSERT INTO participant (partnom, partprenom, partemail, partmdp, partcookie) VALUES  (:nom, :prenom, :email, :mdp, :cookie)";
 		$req=$this->db->prepare($sql);
-		$req->bindValue(':nom', $participant->getNom(), PDO::PARAM_STR);
-		$req->bindValue(':prenom', $participant->getPrenom(), PDO::PARAM_STR);
-		$req->bindValue(':email', $participant->getEmail(), PDO::PARAM_STR);
-		$req->bindValue(':mdp', $participant->getMdp(), PDO::PARAM_STR);
-		$req->bindValue(':cookie', $participant->getCookie(), PDO::PARAM_STR);
-		return $req->execute();
-		
+		$req->bindValue(':nom', $participant->getNom());
+		$req->bindValue(':prenom', $participant->getPrenom());
+		$req->bindValue(':email', $participant->getEmail());
+		$req->bindValue(':mdp', $participant->getMdp());
+		$req->bindValue(':cookie', $participant->getCookie());
+		$req->execute();
+		$req->closeCursor();
 	}
 	
 	public function update($participant){

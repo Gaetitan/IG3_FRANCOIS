@@ -16,7 +16,7 @@
 								'mdp' => myMd5($_POST['mdp_part']),
 								'cookie' => NULL));
 			$manager_part->add($participant);
-			$cree=$manager_part->add($participant);
+			$cree=True;
 		}
 	}
 	
