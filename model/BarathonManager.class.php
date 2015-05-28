@@ -25,6 +25,7 @@ class BarathonManager{
 	public function update($barathon){
 		$sql="UPDATE barathon SET barathonnom=:nom, barathonville=:ville, barathonnbplaces_base=:nbPlaces_base, nbplaces=:nbPlaces, barathonprix=:prix, barathondate=:date, orgaid=orgaId";
 		$req=$this->db->prepare($sql);
+		$req->bindValue(':numero', $barathon->getNumero(), PDO::PARAM_STR);
 		$req->bindValue(':nom', $barathon->getNom(), PDO::PARAM_STR);
 		$req->bindValue(':ville', $barathon->getVille(), PDO::PARAM_STR);
 		$req->bindValue(':nbPlaces_base', $barathon->getNbPlaces_base(), PDO::PARAM_STR);

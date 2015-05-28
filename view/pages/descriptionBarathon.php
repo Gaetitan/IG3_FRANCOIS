@@ -20,7 +20,7 @@
 	</tr>
 	<tr>
 		<td>Prix</td>
-		<td><?php echo($barathon->getVille()) ?></td>
+		<td><?php echo($barathon->getPrix()) ?></td>
 	</tr>
 	<tr>
 		<td>Ville</td>
@@ -46,7 +46,7 @@
 		<tr>
 			<td>
 				<form action="index.php?page=inscriptionBarathon" method="post">
-					<input type="hidden" name="num_barathon" value="<?php print($barathon->getNumero()); ?>"/>
+					<input type="hidden" name="num_barathon" value="<?php echo($barathon->getNumero()); ?>"/>
 					<input class="btn btn-primary" type="submit" value="S'inscrire"/>
 				</form>
 			</td>

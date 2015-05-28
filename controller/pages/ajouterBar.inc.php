@@ -1,6 +1,7 @@
 ﻿<?php
 	$db=new Mypdo();
 	$manager=new BarManager($db);
+	$existe=False;
 	
 	if(isset($_POST['nom_bar'])){
 		if($manager->getOneByNom($_POST['nom_bar']) !== null){

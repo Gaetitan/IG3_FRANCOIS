@@ -10,7 +10,7 @@
 					?>				
 						<label>
 							<input type="checkbox" name="num_bar_<?php echo($bar->getNumero()); ?>" value="<?php echo($bar->getNumero()); ?>" />
-									<?php print($bar->getNom()); ?>
+									<?php echo($bar->getNom()); ?>
 						</label>
 					<?php 
 					}

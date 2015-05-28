@@ -23,18 +23,18 @@
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
 						<div class="caption">
-							<h3><?php print($barathon->getNom()); ?></h3>
-							<p><?php print($barathon->getVille()); ?></p>
-							<p><?php print(getFrenchDate($barathon->getDate())); ?></p>
+							<h3><?php echo($barathon->getNom()); ?></h3>
+							<p><?php echo($barathon->getVille()); ?></p>
+							<p><?php echo(getFrenchDate($barathon->getDate())); ?></p>
 							<p>
 								<?php if(empty($_COOKIE['idOrga'])){ ?>
 									<form action="index.php?page=inscriptionBarathon" method="post">
-										<input type="hidden" name="num_barathon" value="<?php print($barathon->getNumero()); ?>"/>
+										<input type="hidden" name="num_barathon" value="<?php echo($barathon->getNumero()); ?>"/>
 										<input class="btn btn-primary" type="submit" value="S'inscrire"/>
 									</form>
 								<?php } ?>
 								<form action="index.php?page=descriptionBarathon" method="post">
-									<input type="hidden" name="num_barathon" value="<?php print($barathon->getNumero()); ?>"/>
+									<input type="hidden" name="num_barathon" value="<?php echo($barathon->getNumero()); ?>"/>
 									<input class="btn btn-default" type="submit" value="Infos"/>
 								</form>
 							</p>
