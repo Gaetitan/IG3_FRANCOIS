@@ -10,7 +10,7 @@
     <meta name="author" content="">
 
     <title>Rue de la soif</title>
-	
+	<link rel="shortcut icon" type="image/x-icon" href="/images/favicon.ico" />
     <!-- Bootstrap Core CSS -->
     <link href="css/bootstrap.min.css" rel="stylesheet">
 
