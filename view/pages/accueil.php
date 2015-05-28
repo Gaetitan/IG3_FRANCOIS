@@ -6,7 +6,7 @@
             <h1>Salut à toi barathonien</h1>
             <p>Combien de temps cela fait-il que tu n'as pas pratiqué notre beau sport ? Inscris toi vite au barathon le plus proche de chez toi !</p>
         </header>
-
+		
         <hr>
 
         <!-- Title -->
