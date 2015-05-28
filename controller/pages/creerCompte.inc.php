@@ -32,7 +32,6 @@
 			$cree=True;
 		}
 	}
-	$parts=$manager_part->getList();
-	foreach($parts as $part){echo $part->getNom();}
+	
 	include_once("view/pages/creerCompte.php");
 ?>
