@@ -15,6 +15,7 @@
 								'email' => $_POST['email_part'],
 								'mdp' => myMd5($_POST['mdp_part']),
 								'cookie' => NULL));
+								var_dump($manager_part);
 			$manager_part->add($participant);
 			$cree=True;
 		}
