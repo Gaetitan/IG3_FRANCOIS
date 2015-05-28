@@ -2,23 +2,29 @@
 	$db=new Mypdo();
 	$manager_barathon=new BarathonManager($db);
 	$manager_bar=new BarManager($db);
+	$manager_orga=new OrganisateurManager($db);
 	
 	$bar_villes=$manager_bar->getVilles();
 	
+	$existe=False;
+	$cree=False;
+	
 	if(isset($_POST['nom_barathon'])){
 		if($manager_barathon->getOneByNom($_POST['nom_barathon']) !== null){
-			echo "Un barathon portant ce nom existe déjà !";
+			$existe=True;
 		}
 		else{
+			$orga=$manager_orga->getOneByCookie($_COOKIE['idOrga']);
 			$barathon=new Barathon(array('nom' => $_POST['nom_barathon'],
 								'ville' => $_POST['ville_barathon'],
 								'nbPlaces_base' => $_POST['nbPlaces_barathon'],
 								'nbPlaces' => $_POST['nbPlaces_barathon'],
 								'prix' => $_POST['prix_barathon'],
 								'date' => $_POST['date_barathon'],
-								'orgaId' =>$_COOKIE['idOrga']));
+								'orgaId' =>$orga->getNumero()));
+								
 			$manager_barathon->add($barathon);
-			echo "Le barathon a bien été créé !";
+			$cree=True;
 		}
 	}
 	

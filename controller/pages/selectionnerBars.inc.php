@@ -3,10 +3,19 @@
 	$manager_concerner=new ConcernerManager($db);
 	$manager_bar=new BarManager($db);
 	$manager_barathon=new BarathonManager($db);
+	$manager_orga=new OrganisateurManager($db);
 
-	$barathons=$manager_barathon->getListByOrgaId($_COOKIE['idOrga']);
+	$orga=$manager_orga->getOneByCookie($_COOKIE['idOrga']);
+	$barathons=$manager_barathon->getListByOrgaId($orga->getNumero());
 	$bars=$manager_bar->getList();
-	$listeConcerner=$manager_concerner->getList();
+	
+	foreach($barathons as $barathon){
+		foreach($bars as $bar){
+			if($bar->getVille()===$barathon->getVille()){
+				$isPresent[$barathon->getNumero()][$bar->getNumero()]=$manager_concerner->isPresent($barathon->getNumero(), $bar->getNumero());
+			}
+		}
+	}
 	
 	foreach($barathons as $barathon){
 		foreach($bars as $bar){

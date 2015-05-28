@@ -8,3 +8,12 @@
 		<p>Ville : <input type="text" name="ville_bar" placeholder="Montpellier" required/></p>
 		<input class="btn btn-primary" type="submit" value="Valider"/>
 	</form>
+	
+	<?php
+		if($existe){
+			echo("Ce bar existe déjà !");
+		}
+		if($ajoute){
+			echo("Le bar a été ajouté !");
+		}
+	?>

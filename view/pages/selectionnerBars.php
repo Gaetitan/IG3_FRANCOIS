@@ -7,12 +7,14 @@
 			<?php
 				foreach($bars as $bar){
 					if($bar->getVille()===$barathon->getVille()){
+						if(!$isPresent[$barathon->getNumero()][$bar->getNumero()]){
 					?>				
-						<label>
-							<input type="checkbox" name="num_bar_<?php echo($bar->getNumero()); ?>" value="<?php echo($bar->getNumero()); ?>" />
-									<?php echo($bar->getNom()); ?>
-						</label>
+							<label>
+								<input type="checkbox" name="num_bar_<?php echo($bar->getNumero()); ?>" value="<?php echo($bar->getNumero()); ?>" />
+										<?php echo($bar->getNom()); ?>
+							</label>
 					<?php 
+						}
 					}
 				} ?>
 			<input class="btn btn-primary" type="submit" value="Valider"/>

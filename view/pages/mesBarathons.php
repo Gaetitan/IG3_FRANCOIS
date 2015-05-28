@@ -1,60 +1,26 @@
-<div class="mesBarathons" >
-                <table >
-                    <tr>
-                        <td>
-                            Title 1
-                        </td>
-                        <td >
-                            Title 2
-                        </td>
-                        <td>
-                            Title 3
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            Row 1
-                        </td>
-                        <td>
-                            Row 1
-                        </td>
-                        <td>
-                            Row 1
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                        <td>
-                            Row 2
-                        </td>
-                    </tr>
-                    <tr>
-                        <td >
-                            Row 3
-                        </td>
-                        <td>
-                            Row 3
-                        </td>
-                        <td>
-                            Row 3
-                        </td>
-                    </tr>
-                </table>
-            </div>
-            
+<table>
+	<tr>
+		<th>Mes barathons</th>
+	</tr>
+	<tr>
+		<td>Nom</td>
+		<td>Ville</td>
+		<td>Date</td>
+	</tr>
+	<?php
+		foreach($barathons as $barathon){ ?>
+			<tr>
+				<td><?php echo($barathon->getNom()); ?></td>
+				<td><?php echo($barathon->getVille()); ?></td>
+				<td><?php echo(getFrenchDate($barathon->getDate())); ?></td>
+				<td>
+					<form action="index.php?page=descriptionBarathon" method="post">
+						<input type="hidden" name="num_barathon" value="<?php echo($barathon->getNumero()); ?>"/>
+						<input class="btn btn-default" type="submit" value="Infos"/>
+					</form>
+				</td>
+			</tr>
+	<?php
+		}
+	?>
+</table>

@@ -40,7 +40,7 @@ class BarathonManager{
 	public function delete($barathon){
 			$sql="DELETE FROM barathon WHERE barathonid=:numero";
 			$req=$this->db->prepare($sql);
-			$req->bindValue(':numero', $numero, PDO::PARAM_STR);
+			$req->bindValue(':numero', $barathon->getNumero(), PDO::PARAM_STR);
 			$req->execute();
 			$req->closeCursor();
 	}

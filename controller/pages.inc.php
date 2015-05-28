@@ -48,6 +48,14 @@
 			include_once('pages/mesBarathons.inc.php');
 			break;
 			
+		case 'supprimerBarathon':
+			include_once('pages/supprimerBarathon.inc.php');
+			break;
+			
+		case 'supprimerInscription':
+			include_once('pages/supprimerInscription.inc.php');
+			break;
+			
 		default:
 			include_once('pages/accueil.inc.php');
 	}

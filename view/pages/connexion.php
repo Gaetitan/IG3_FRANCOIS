@@ -15,7 +15,7 @@
 </div>
 
 <?php
-	if(!$existe){
+	if($existe){
 		echo "Ce compte n'existe pas !";
 	}
 	if(!$bonIdentifiant){

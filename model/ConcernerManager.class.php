@@ -17,14 +17,6 @@ class ConcernerManager{
 		$req->closeCursor();
 	}
 	
-	public function delete_causeBarathon($concerner){
-			$sql="DELETE FROM concerner WHERE barathonid=:numeroBarathon";
-			$req=$this->db->prepare($sql);
-			$req->bindValue(':numeroBarathon', $numeroBarathon, PDO::PARAM_STR);
-			$req->execute();
-			$req->closeCursor();
-	}
-	
 	public function getList(){
 		$listeConcerner=array();
 		
@@ -60,7 +52,7 @@ class ConcernerManager{
 	}
 	
 	public function isPresent($numeroBarathon, $numeroBar){
-		$sql="SELECT barathonid as numeroBarathon, bar as numeroBar FROM participer WHERE barathonid=:numeroBarathon AND barid=:numeroBar";
+		$sql="SELECT barathonid as numeroBarathon, barid as numeroBar FROM concerner WHERE barathonid=:numeroBarathon AND barid=:numeroBar";
 		$req=$this->db->prepare($sql);
 		$req->bindValue(':numeroBarathon', $numeroBarathon, PDO::PARAM_STR);
 		$req->bindValue(':numeroBar', $numeroBar, PDO::PARAM_STR);

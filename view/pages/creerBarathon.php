@@ -2,7 +2,7 @@
 		<h3>Nouveau barathon</h3>
 		<p>Nom : <input type="text" name="nom_barathon" placeholder="Stannis Barathon" required /></p>
 		<p>Ville : 
-			<select name="ville_barathon" onChange="choix(this.form)" required>
+			<select name="ville_barathon" required>
 				<?php foreach ($bar_villes as $bar_ville){ ?>
 					<option><?php print($bar_ville->getVille()); ?></option>
 				<?php } ?>
@@ -14,3 +14,13 @@
 		
 		<input class="btn btn-primary" type="submit" value="Valider"/>
 	</form>
+	
+	<?php
+		if($existe){
+				echo("Ce barathon existe déjà !");
+		}
+		if($cree){
+				echo("Le barathon a bien été créé !");
+		}
+	
+	?>

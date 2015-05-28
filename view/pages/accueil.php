@@ -3,10 +3,25 @@
 
         <!-- Jumbotron Header -->
         <header class="jumbotron hero-spacer">
-            <h1>Salut à toi barathonien</h1>
-            <p>Combien de temps cela fait-il que tu n'as pas pratiqué notre beau sport ? Inscris toi vite au barathon le plus proche de chez toi !</p>
-        </header>
-
+		<?php if(empty($_COOKIE['idPart'])&&empty($_COOKIE['idOrga'])){ ?>
+            <h1>Salut le barathonien !</h1>
+            <p>Inscrivez vous vite au barathon le plus proche de chez vous !</p>
+        <?php
+		}
+		if(!empty($_COOKIE['idPart'])&&empty($_COOKIE['idOrga'])){ ?>
+			<h1>Bonjour <?php echo($participant->getPrenom()) ?> !</h1>
+            <p>Quel nouveau barathon allez-vous rejoindre aujourd'hui ?</p>
+		<?php
+		}
+		if(empty($_COOKIE['idPart'])&&!empty($_COOKIE['idOrga'])){
+		?>
+		<h1>Bonjour <?php echo($organisateur->getNom()) ?> !</h1>
+            <p>Quel nouvel événement de folie nous préparez-vous ?</p>
+		<?php
+		}
+		?>
+		</header>
+		
         <hr>
 
         <!-- Title -->

@@ -2,13 +2,13 @@
 	$db=new Mypdo();
 	$manager_part=new ParticipantManager($db);
 	$manager_orga=new OrganisateurManager($db);
-	$existe=True;
+	$existe=False;
 	$bonIdentifiant=True;
 	
 	if(isset($_POST['email_part'])){
 		$participant=$manager_part->getOneByEmail($_POST['email_part']);
 		if($participant === null){
-			$existe=False;
+			$existe=True;
 		}
 		else{
 			if(myMd5($_POST['mdp_part'])===$participant->getMdp()){

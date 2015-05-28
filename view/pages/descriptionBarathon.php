@@ -1,35 +1,34 @@
-<table class="tableauDescription">
-	<tr>
-		<th><?php echo($barathon->getNom()) ?></th>
-	</tr>
-	<tr>
-		<td>Ville</td>
-		<td><?php echo($barathon->getVille()) ?></td>
-	</tr>
-	<tr>
-		<td>Date</td>
-		<td><?php echo(getFrenchDate($barathon->getDate())) ?></td>
-	</tr>
-	<tr>
-		<td>Nombre de places</td>
-		<td><?php echo($barathon->getNbPlaces_base()) ?></td>
-	</tr>
-	<tr>
-		<td>Places restantes</td>
-		<td><?php echo($barathon->getNbPlaces()) ?></td>
-	</tr>
-	<tr>
-		<td>Prix</td>
-		<td><?php echo($barathon->getPrix()) ?></td>
-	</tr>
-	<tr>
-		<td>Ville</td>
-		<td><?php echo($barathon->getVille()) ?></td>
-	</tr>
-	<tr>
-		<td>Bars</td>
-		<tr>
-		<?php
+<table>
+  <tr>
+    <th><?php echo($barathon->getNom()) ?></th>
+  </tr>
+  <tr>
+    <td>Ville</td>
+    <td><?php echo($barathon->getVille()) ?></td>
+  </tr>
+  <tr>
+    <td>Date</td>
+    <td><?php echo(getFrenchDate($barathon->getDate())) ?></td>
+  </tr>
+  <tr>
+    <td>Nombre de places</td>
+    <td><?php echo($barathon->getNbPlaces_base()) ?></td>
+  </tr>
+  <tr>
+    <td>Places restantes</td>
+    <td><?php echo($barathon->getNbPlaces()) ?></td>
+  </tr>
+  <tr>
+    <td>Prix</td>
+    <td ><?php echo($barathon->getPrix()) ?> €</td>
+  </tr>
+  <tr>
+    <td>Organisateur</td>
+    <td><?php echo($orga->getNom()) ?></td>
+  </tr>
+  <tr>
+    <td>Bars</td>
+	<?php
 			if(empty($barsConcernes)){ ?>
 				<td><?php echo "Aucun bar pour ce barathon pour l'instant."?></td>
 			<?php
@@ -40,9 +39,8 @@
 		<?php }
 			}
 		?>
-		</tr>
-	</tr>
-	<?php if(empty($_COOKIE['idOrga'])){ ?>
+  </tr>
+  <?php if(empty($_COOKIE['idOrga'])){ ?>
 		<tr>
 			<td>
 				<form action="index.php?page=inscriptionBarathon" method="post">
@@ -52,6 +50,4 @@
 			</td>
 		</tr>
 	<?php } ?>
-
-
 </table>
