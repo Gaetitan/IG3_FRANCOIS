@@ -13,7 +13,7 @@
 			$participant=new Participant(array('nom' => $_POST['nom_part'],
 								'prenom' => $_POST['prenom_part'],
 								'email' => $_POST['email_part'],
-								'mdp' => md5($_POST['mdp_part']),
+								'mdp' => myMd5($_POST['mdp_part']),
 								'cookie' => NULL));var_dump($participant);
 			$manager_part->add($participant);
 			$cree=True;

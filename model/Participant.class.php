@@ -2,12 +2,12 @@
 
 class Participant{
 	
-	private $numero;
-	private $nom;
-	private $prenom;
-	private $email;
-	private $mdp;
-	private $cookie;
+	public $numero;
+	public $nom;
+	public $prenom;
+	public $email;
+	public $mdp;
+	public $cookie;
 	
 	public function __construct($valeurs=array()){
 		if(!empty($valeurs)){
