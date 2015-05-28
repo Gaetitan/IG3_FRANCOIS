@@ -15,6 +15,6 @@
 		$manager_orga->update($organisateur);
 		setcookie("idOrga");
 	}
-	header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
+	header('Location: http://localhost/ruedelasoif/index.php');
 	include_once("view/pages/deconnexion.php");
 ?>

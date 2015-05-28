@@ -16,7 +16,7 @@
 				$participant->setCookie($cookie);
 				$manager_part->update($participant);
 				setcookie("idPart", $cookie, time()+365*24*3600);
-				header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
+				header('Location: http://localhost/ruedelasoif/index.php');
 			}
 			else{
 				$bonIdentifiant=False;
@@ -34,7 +34,7 @@
 				$organisateur->setCookie($cookie);
 				$manager_orga->update($organisateur);
 				setcookie("idOrga", $cookie, time()+365*24*3600);
-				header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
+				header('Location: http://localhost/ruedelasoif/index.php');
 			}
 			else{
 				$bonIdentifiant=False;

@@ -6,7 +6,7 @@
 	$barathon=$manager_barathon->getOneById($_POST['num_barathon']);
 	
 	if(empty($_COOKIE['idPart'])){
-		header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php?page=connexion');
+		header('Location: http://localhost/ruedelasoif/index.php?page=connexion');
 	}
 	elseif(!empty($_COOKIE['idPart'])){
 		if(!$manager_participer->isPresent($barathon->getNumero(), $_COOKIE['idPart'])){
