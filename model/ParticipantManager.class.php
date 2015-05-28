@@ -9,7 +9,7 @@ class ParticipantManager{
 	}
 	
 	public function add($participant){
-		$sql="INSERT INTO PARTICIPANT (PARTNOM, PARTPRENOM, PARTEMAIL, PARTMDP, PARTCOOKIE) VALUES  (:nom, :prenom, :email, :mdp, :cookie)";
+		$sql="INSERT INTO PARTICIPANT (partnom, partprenom, partemail, partmdp, partcookie) VALUES  (:nom, :prenom, :email, :mdp, :cookie)";
 		$req=$this->db->prepare($sql);
 		$req->bindValue(':nom', $participant->getNom(), PDO::PARAM_STR);
 		$req->bindValue(':prenom', $participant->getPrenom(), PDO::PARAM_STR);
