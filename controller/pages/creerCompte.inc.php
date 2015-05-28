@@ -5,7 +5,7 @@
 	$existe=False;
 	$cree=False;
 	
-	if(isset($_POST['nom_part'])){var_dump($participant);
+	if(isset($_POST['nom_part'])){
 		if($manager_part->getOneByEmail($_POST['email_part']) !== null){
 			$existe=True;
 		}
@@ -15,7 +15,6 @@
 											'email' => $_POST['email_part'],
 											'mdp' => myMd5($_POST['mdp_part']),
 											'cookie' => NULL));
-											var_dump($participant);
 			$manager_part->add($participant);
 			$cree=True;
 		}
