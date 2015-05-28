@@ -14,9 +14,9 @@
 								'prenom' => $_POST['prenom_part'],
 								'email' => $_POST['email_part'],
 								'mdp' => myMd5($_POST['mdp_part']),
-								'cookie' => NULL));var_dump($participant);
+								'cookie' => NULL));
 			$manager_part->add($participant);
-			$cree=True;
+			$cree=$manager_part->add($participant);
 		}
 	}
 	
