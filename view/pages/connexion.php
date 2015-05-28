@@ -13,3 +13,12 @@
 		<input class="btn btn-primary" type="submit" value="Valider"/>
 	</form>
 </div>
+
+<?php
+	if(!$existe){
+		echo "Ce compte n'existe pas !";
+	}
+	if(!$bonIdentifiant){
+		echo "Identification incorrecte. Veuillez saisir à nouveau vos identifiants !";
+	}
+?>

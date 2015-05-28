@@ -6,6 +6,7 @@ class Organisateur{
 	private $nom;
 	private $email;
 	private $mdp;
+	private $cookie;
 	
 	public function __construct($valeurs=array()){
 		if(!empty($valeurs)){
@@ -23,6 +24,8 @@ class Organisateur{
 				case 'email' : $this->setEmail($valeur);
 				break;
 				case 'mdp' : $this->setMdp($valeur);
+				break;
+				case 'cookie' : $this->setCookie($valeur);
 				break;
 			}
 		}
@@ -44,6 +47,10 @@ class Organisateur{
 		return $this->mdp;
 	}
 	
+	public function getCookie(){
+		return $this->cookie;
+	}
+	
 	public function setNumero($numero){
 		$this->numero=$numero;
 	}
@@ -58,6 +65,10 @@ class Organisateur{
 	
 	public function setMdp($mdp){
 		$this->mdp=$mdp;
+	}
+	
+	public function setCookie($cookie){
+		$this->cookie=$cookie;
 	}
 	
 }

@@ -16,3 +16,12 @@
 		<input class="btn btn-primary" type="submit" value="Valider"/>
 	</form>
 </div>
+
+<?php
+	if($existe){
+		echo "Ce compte existe déja !";
+	}
+	else{
+		echo "Votre compte a bien été créé !";
+	}
+?>
