@@ -13,10 +13,10 @@
 		else{
 			if(myMd5($_POST['mdp_part'])===$participant->getMdp()){
 				$cookie=mySha1($participant->getNumero());
-				$participant->setCookie($cookie);var_dump($manager_part);
+				$participant->setCookie($cookie);
 				$manager_part->update($participant);
 				setcookie("idPart", $cookie, time()+365*24*3600);
-				//header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
+				header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php');
 			}
 			else{
 				$bonIdentifiant=False;
