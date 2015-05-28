@@ -3,6 +3,7 @@
 	$manager_part=new ParticipantManager($db);
 	$manager_orga=new OrganisateurManager($db);
 	$existe=False;
+	$cree=False;
 	
 	if(isset($_POST['nom_part'])){
 		if($manager_part->getOneByEmail($_POST['email_part']) !== null){
@@ -15,6 +16,7 @@
 											'mdp' => myMd5($_POST['mdp_part']),
 											'cookie' => NULL));
 			$manager_part->add($participant);
+			$cree=True;
 		}
 	}
 	if(isset($_POST['nom_orga'])){
@@ -27,6 +29,7 @@
 											'mdp'=>myMd5($_POST['mdp_orga']),
 											'cookie' => NULL));
 			$manager_orga->add($organisateur);
+			$cree=True;
 		}
 	}
 	
