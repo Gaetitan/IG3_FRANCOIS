@@ -11,27 +11,28 @@
 		}
 		else{
 			$participant=new Participant(array('nom' => $_POST['nom_part'],
-											'prenom' => $_POST['prenom_part'],
-											'email' => $_POST['email_part'],
-											'mdp' => myMd5($_POST['mdp_part']),
-											'cookie' => NULL));
+								'prenom' => $_POST['prenom_part'],
+								'email' => $_POST['email_part'],
+								'mdp' => myMd5($_POST['mdp_part']),
+								'cookie' => NULL));
 			$manager_part->add($participant);
 			$cree=True;
 		}
 	}
+	
 	if(isset($_POST['nom_orga'])){
 		if($manager_orga->getOneByEmail($_POST['email_orga']) !== null){
 			$existe=True;
 		}
 		else{
-			$organisateur=new Organisateur(array('nom'=>$_POST['nom_orga'],
-											'email'=>$_POST['email_orga'],
-											'mdp'=>myMd5($_POST['mdp_orga']),
-											'cookie' => NULL));
+			$organisateur=new Organisateur(array('nom' => $_POST['nom_orga'],
+								'email' => $_POST['email_orga'],
+								'mdp' => myMd5($_POST['mdp_orga']),
+								'cookie' => NULL));
 			$manager_orga->add($organisateur);
 			$cree=True;
 		}
 	}
 	
-	include_once("view/pages/creerCompte.php");
+	include_once('view/pages/creerCompte.php');
 ?>
