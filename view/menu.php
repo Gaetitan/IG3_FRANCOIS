@@ -53,7 +53,7 @@
 							<a href="index.php?page=mesBarathons">Mes barathons</a>
 						</li>
 						<li>
-							<a href="index.php?page=participantsBarathon">Mes barathons</a>
+							<a href="index.php?page=participantsBarathon">Participants</a>
 						</li>
 						<li>
 							<a href="index.php?page=supprimerBarathon">Supprimer un barathon</a>
