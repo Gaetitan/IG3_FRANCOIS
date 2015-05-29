@@ -56,6 +56,10 @@
 			include_once('pages/supprimerInscription.inc.php');
 			break;
 			
+		case 'participantsBarathon':
+			include_once('pages/participantsBarathon.inc.php');
+			break;
+			
 		default:
 			include_once('pages/accueil.inc.php');
 	}

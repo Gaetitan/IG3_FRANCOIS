@@ -50,10 +50,13 @@
 							<a href="index.php?page=ajouterBar">Ajouter un bar</a>
 						</li>
 						<li>
-							<a href="index.php?page=supprimerBarathon">Supprimer un barathon</a>
+							<a href="index.php?page=mesBarathons">Mes barathons</a>
 						</li>
 						<li>
-							<a href="index.php?page=mesBarathons">Mes barathons</a>
+							<a href="index.php?page=participantsBarathon">Mes barathons</a>
+						</li>
+						<li>
+							<a href="index.php?page=supprimerBarathon">Supprimer un barathon</a>
 						</li>
 						<li>
 							<a href="index.php?page=deconnexion">Déconnexion</a>
