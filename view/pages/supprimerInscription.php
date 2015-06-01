@@ -3,7 +3,7 @@
 		<p>Barathon : 
 			<select name="inscription" required>
 				<?php foreach ($barathons as $barathon){ ?>
-					<option value="<?php echo($barathon->getNumero()) ?>"><?php echo($barathon->getNom()); ?></option>
+					<option value="<?php echo($barathon->getNumero()) ?>"><?php echo(htmlspecialchars($barathon->getNom())); ?></option>
 				<?php } ?>
 			</select>
 		</p>

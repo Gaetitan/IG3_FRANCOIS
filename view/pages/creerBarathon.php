@@ -17,10 +17,10 @@
 	
 	<?php
 		if($existe){
-				echo("Ce barathon existe déjà !");
+			echo("Ce barathon existe déjà !");
 		}
 		if($cree){
-				echo("Le barathon a bien été créé !");
+			echo("Le barathon a bien été créé !");
 		}
 		if($datePassee){
 			echo("La date indiquée est déjà passée.");

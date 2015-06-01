@@ -10,9 +10,9 @@
 	<?php
 		foreach($barathons as $barathon){ ?>
 			<tr>
-				<td><?php echo($barathon->getNom()); ?></td>
-				<td><?php echo($barathon->getVille()); ?></td>
-				<td><?php echo(getFrenchDate($barathon->getDate())); ?></td>
+				<td><?php echo(htmlspecialchars($barathon->getNom())); ?></td>
+				<td><?php echo(htmlspecialchars($barathon->getVille())); ?></td>
+				<td><?php echo(htmlspecialchars(getFrenchDate($barathon->getDate()))); ?></td>
 				<td>
 					<form action="index.php?page=descriptionBarathon" method="post">
 						<input type="hidden" name="num_barathon" value="<?php echo($barathon->getNumero()); ?>"/>

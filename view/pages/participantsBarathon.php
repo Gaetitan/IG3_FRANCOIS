@@ -3,7 +3,7 @@
 		<p>Barathon : 
 			<select name="barathon" required>
 				<?php foreach ($barathons as $barathon){ ?>
-					<option value="<?php echo($barathon->getNumero()) ?>"><?php echo($barathon->getNom()); ?></option>
+					<option value="<?php echo($barathon->getNumero()) ?>"><?php echo(htmlspecialchars($barathon->getNom())); ?></option>
 				<?php } ?>
 			</select>
 		</p>
@@ -19,7 +19,7 @@
 	?>
 			<table class="table">
 				<tr>
-					<th><?php echo($monBarathon->getNom()); ?></th>
+					<th><?php echo(htmlspecialchars($monBarathon->getNom())); ?></th>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>
@@ -32,8 +32,8 @@
 				?>
 					<tr>
 						<td><?php echo($i); ?></td>
-						<td><?php echo($participant->getPrenom()); ?></td>
-						<td><?php echo($participant->getNom()); ?></td>
+						<td><?php echo(htmlspecialchars($participant->getPrenom())); ?></td>
+						<td><?php echo(htmlspecialchars($participant->getNom())); ?></td>
 					</tr>
 				<?php
 				$i=$i+1;

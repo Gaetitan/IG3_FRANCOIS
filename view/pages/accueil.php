@@ -9,13 +9,13 @@
         <?php
 		}
 		if(!empty($_COOKIE['idPart'])&&empty($_COOKIE['idOrga'])){ ?>
-			<h1>Bonjour <?php echo($participant->getPrenom()) ?> !</h1>
+			<h1>Bonjour <?php echo(htmlspecialchars($participant->getPrenom())) ?> !</h1>
             <p>Quel nouveau barathon allez-vous rejoindre aujourd'hui ?</p>
 		<?php
 		}
 		if(empty($_COOKIE['idPart'])&&!empty($_COOKIE['idOrga'])){
 		?>
-		<h1>Bonjour <?php echo($organisateur->getNom()) ?> !</h1>
+		<h1>Bonjour <?php echo(htmlspecialchars($organisateur->getNom())) ?> !</h1>
             <p>Quel nouvel événement de folie nous préparez-vous ?</p>
 		<?php
 		}
@@ -38,9 +38,9 @@
 				<div class="col-md-3 col-sm-6 hero-feature">
 					<div class="thumbnail">
 						<div class="caption">
-							<h3><?php echo($barathon->getNom()); ?></h3>
-							<p><?php echo($barathon->getVille()); ?></p>
-							<p><?php echo(getFrenchDate($barathon->getDate())); ?></p>
+							<h3><?php echo(htmlspecialchars($barathon->getNom())); ?></h3>
+							<p><?php echo(htmlspecialchars($barathon->getVille())); ?></p>
+							<p><?php echo(htmlspecialchars(getFrenchDate($barathon->getDate()))); ?></p>
 							<p>
 								<?php if(empty($_COOKIE['idOrga'])){ ?>
 									<form action="index.php?page=inscriptionBarathon" method="post">

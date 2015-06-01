@@ -1,30 +1,30 @@
 <table class="table">
   <tr>
-    <th><?php echo($barathon->getNom()) ?></th>
+    <th><?php echo(htmlspecialchars($barathon->getNom())); ?></th>
   </tr>
   <tr>
     <td>Ville</td>
-    <td><?php echo($barathon->getVille()) ?></td>
+    <td><?php echo(htmlspecialchars($barathon->getVille())); ?></td>
   </tr>
   <tr>
     <td>Date</td>
-    <td><?php echo(getFrenchDate($barathon->getDate())) ?></td>
+    <td><?php echo(htmlspecialchars(getFrenchDate($barathon->getDate()))); ?></td>
   </tr>
   <tr>
     <td>Nombre de places</td>
-    <td><?php echo($barathon->getNbPlaces_base()) ?></td>
+    <td><?php echo(htmlspecialchars($barathon->getNbPlaces_base())); ?></td>
   </tr>
   <tr>
     <td>Places restantes</td>
-    <td><?php echo($barathon->getNbPlaces()) ?></td>
+    <td><?php echo(htmlspecialchars($barathon->getNbPlaces())); ?></td>
   </tr>
   <tr>
     <td>Prix</td>
-    <td ><?php echo($barathon->getPrix()) ?> €</td>
+    <td ><?php echo(htmlspecialchars($barathon->getPrix())); ?> €</td>
   </tr>
   <tr>
     <td>Organisateur</td>
-    <td><?php echo($orga->getNom()) ?></td>
+    <td><?php echo(htmlspecialchars($orga->getNom())); ?></td>
   </tr>
   <tr>
     <td>Bars</td>
@@ -35,7 +35,7 @@
 			}
 			else{
 				foreach($barsConcernes as $barConcerne){ ?>
-					<td><?php echo($barConcerne->getNom()); ?></td>
+					<td><?php echo(htmlspecialchars($barConcerne->getNom())); ?></td>
 		<?php }
 			}
 		?>
