@@ -4,10 +4,10 @@
 		protected $dbo;
 		
 		public function __construct(){
-			$DBHOST='127.8.194.2';
-			$DBNAME='ruedelasoif';
-			$DBUSER='admin95Mdcsg';
-			$DBPASSWD='QGTzbePMAVmD';
+			$DBHOST='hote';
+			$DBNAME='basededonnees';
+			$DBUSER='utilisateur';
+			$DBPASSWD='motdepasse';
 			
 			try{
 				$this->dbo=parent::__construct('mysql:host='.$DBHOST.'; dbname='.$DBNAME, $DBUSER, $DBPASSWD);
