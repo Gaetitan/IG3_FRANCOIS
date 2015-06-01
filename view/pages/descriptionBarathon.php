@@ -1,4 +1,4 @@
-<table>
+<table class="table">
   <tr>
     <th><?php echo($barathon->getNom()) ?></th>
   </tr>

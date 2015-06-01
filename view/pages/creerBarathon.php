@@ -22,5 +22,7 @@
 		if($cree){
 				echo("Le barathon a bien été créé !");
 		}
-	
+		if($datePassee){
+			echo("La date indiquée est déjà passée.");
+		}	
 	?>

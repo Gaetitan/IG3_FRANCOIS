@@ -5,5 +5,7 @@
 	if($inscrit){
 		echo("Vous êtes bien inscrit à ce barathon !");
 	}
-	
+	if($inscriptionsTerminees){
+		echo("Les inscriptions pour ce barathon sont déja closes.");
+	}	
 ?>

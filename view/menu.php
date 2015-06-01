@@ -67,6 +67,16 @@
                 </ul>
             </div>
             <!-- /.navbar-collapse -->		
+			<?php
+				if(!empty($_COOKIE['idPart']) && empty($_COOKIE['idOrga'])){ ?>
+					<div class="login">Connecté en tant que <?php echo($participant->getPrenom().' '.$participant->getNom()); ?></div>
+			<?php
+				}
+				if(empty($_COOKIE['idPart']) && !empty($_COOKIE['idOrga'])){ ?>
+					<div class="login">Connecté en tant que <?php echo($organisateur->getNom()); ?></div>
+			<?php
+				}
+			?>
 			
         </div>
         <!-- /.container -->

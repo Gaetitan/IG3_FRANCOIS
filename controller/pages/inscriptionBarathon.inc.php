@@ -8,20 +8,26 @@
 	
 	$dejaInscrit=False;
 	$inscrit=False;
+	$inscriptionsTerminees=False;
 	
-	if(empty($_COOKIE['idPart'])){
-		header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php?page=connexion');
+	if($barathon->getNbPlaces()==0){
+		$inscriptionsTerminees=True;
 	}
 	else{
-		$participant=$manager_part->getOneByCookie($_COOKIE['idPart']);
-		if(!$manager_participer->isPresent($barathon->getNumero(), $participant->getNumero())){
-			$participer=new Participer(array('numeroBarathon' => $barathon->getNumero(),
-																					'numeroParticipant'=>$participant->getNumero()));
-			$manager_participer->add($participer);
-			$inscrit=True;
+		if(empty($_COOKIE['idPart'])){
+			header('Location: http://ruedelasoif-gaetitan.rhcloud.com/index.php?page=connexion');
 		}
 		else{
-			$dejaInscrit=True;
+			$participant=$manager_part->getOneByCookie($_COOKIE['idPart']);
+			if(!$manager_participer->isPresent($barathon->getNumero(), $participant->getNumero())){
+				$participer=new Participer(array('numeroBarathon' => $barathon->getNumero(),
+																						'numeroParticipant'=>$participant->getNumero()));
+				$manager_participer->add($participer);
+				$inscrit=True;
+			}
+			else{
+				$dejaInscrit=True;
+			}
 		}
 	}
 	include_once('view/pages/inscriptionBarathon.php');

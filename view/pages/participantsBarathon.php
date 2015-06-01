@@ -17,7 +17,7 @@
 		}
 		else{
 	?>
-			<table>
+			<table class="table">
 				<tr>
 					<th><?php $monBarathon->getNom() ?></th>
 				</tr>
