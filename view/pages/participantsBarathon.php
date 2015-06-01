@@ -19,7 +19,7 @@
 	?>
 			<table class="table">
 				<tr>
-					<th><?php $monBarathon->getNom() ?></th>
+					<th><?php echo($monBarathon->getNom()); ?></th>
 				</tr>
 				<tr>
 					<td>&nbsp;</td>

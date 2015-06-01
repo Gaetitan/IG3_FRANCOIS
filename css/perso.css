@@ -12,3 +12,8 @@
 .formulaire>form>p>input{
 	margin-left: 25px;
 }
+
+/* Login */
+.login{
+	color: white;
+}
